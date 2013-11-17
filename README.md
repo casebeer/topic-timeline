@@ -9,6 +9,10 @@ as part of a larger Angular app. It was created for the New York Times' [TimesOp
 You'll need 
 [AngularJS][AngularJS] and [TimelineJS][TimelineJS].
 
+Topic Timeline uses the New York Times [Article Search API v2][article-search-api]. 
+[Request an API key][request-api-key] from the NYT. Be sure to get a key for the 
+"Article Search API."
+
 ## Demo
 
 See a demo at 
@@ -55,4 +59,6 @@ var myApp = angular.module('myApp', ['topicTimeline']);
 [AngularJS]: http://angularjs.org/
 [TimelineJS]: https://github.com/NUKnightLab/TimelineJS
 [hackday2013]: http://developers.nytimes.com/events/hack-day/
+[article-search-api]: http://developer.nytimes.com/docs/read/article_search_api_v2
+[request-api-key]: http://developer.nytimes.com/docs/reference/keys
 
