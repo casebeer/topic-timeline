@@ -103,9 +103,7 @@ angular.module('topicTimeline').directive('topicTimeline', function ($q, $http, 
 					embed_id: $scope.embedId,
 					width: '100%',
 					height: '650',
-					source: timelineData,
-					css: 'vendor/timelinejs/css/timeline.css',
-					js: 'vendor/timelinejs/js/timeline-min.js'
+					source: timelineData
 				});
 			}
 		}
