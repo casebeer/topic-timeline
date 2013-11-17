@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<style>
+</style>
+</head>
+<body ng-app="app">
+
+<nyt-timeline search-term="crime" api-key=""></nyt-timeline>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="vendor/storyjs-embed.js"></script>
+<script src="nyt.js"></script>
+<script src="nyt-ng.js"></script>
+
+<script>
+//<![CDATA[
+angular.module('app', ['nytTimeline']);
+//]]>
+</script>
+
+</body>
+</html>
