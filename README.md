@@ -9,10 +9,6 @@ See a demo at
 
 ## Installation
 
-Build the `topic-timeline.js` file with `make`:
-
-    $ make 
-
 Include AngularJS, TimelineJS, and `topic-timeline.js` in your HTML file,
 in that order. 
 
