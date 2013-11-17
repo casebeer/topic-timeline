@@ -1,7 +1,7 @@
 
 all: timeline.html topic-timeline.js
 
-topic-timeline.js: src/topic-timeline-ng.js src/nyt-api.js
+topic-timeline.js: src/nyt-api.js src/topic-timeline-ng.js 
 	cat $^ > $@
 
 timeline.html: example.html
