@@ -73,7 +73,7 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 							startDate: date,
 							endDate: date,
 							headline: article.headline.main,
-							text: article.lead_paragraph
+							text: article.lead_paragraph || article.snippet
 						};
 					// todo: template text?
 					// todo: images
@@ -107,7 +107,7 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 				createStoryJS({
 					type: 'timeline',
 					width: '100%',
-					height: '200',
+					height: '650',
 					embed_id: $scope.embedId,
 					source: timelineData,
 					css: 'vendor/timelinejs/css/timeline.css',
