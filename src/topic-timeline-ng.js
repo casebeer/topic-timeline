@@ -64,14 +64,32 @@ angular.module('topicTimeline').directive('topicTimeline', function ($q, $http, 
 
 				function articleToEvent(article) {
 					var date = article.pub_date.split('T')[0].split('-').join(','),
-						event_ = {
-							startDate: date,
-							endDate: date,
-							headline: article.headline.main,
-							text: article.lead_paragraph || article.snippet
-						};
+						text = article.lead_paragraph || article.snippet,
+						link = '<p><a href="' + article.web_url + '">read more...</a><p>',
+						event_,
+						image,
+						i;
+					text = '<p>' + text + '</p>';
+					event_ = {
+						startDate: date,
+						endDate: date,
+						headline: article.headline.main,
+						text: text + link
+					};
 					// todo: template text?
 					// todo: images
+
+					for (i = 0; i < article.multimedia.length; i++) {
+						image = article.multimedia[i];
+						if (image.type === 'image' 
+							&& (image.subtype === 'wide' || image.subtype === 'xlarge')) {
+							event_.asset = {
+								media: 'http://www.nytimes.com/' + image.url
+							};
+							break;
+						}
+					}
+
 					return event_;
 				}
 
