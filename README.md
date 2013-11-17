@@ -2,7 +2,12 @@
 
 This timeline shows representative New York Times stories for a chosen keyword using data from the New York Times' Article Search API.
 
-Topic Timeline requries AngularJS and TimelineJS.
+Topic Timeline is an AngularJS directive that can be embedded as a widget or used
+as part of a larger Angular app. It was created for the New York Times' [TimesOpen Hack Day 2013][hackday2013].
+
+## Dependencies
+You'll need 
+[AngularJS][AngularJS] and [TimelineJS][TimelineJS].
 
 ## Demo
 
@@ -12,11 +17,26 @@ See a demo at
 ## Installation
 
 Include AngularJS, TimelineJS, and `topic-timeline.js` in your HTML file,
-in that order. 
+in that order: 
+
+```HTML
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+<script src="topic-timeline.js"></script>
+```
 
 Now add a `<topic-timeline>` element to your HTML, setting the `search-term` and
 `api-key` attributes:
 
     <topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
 
-See `example.html` for an example.
+If you prefer, you can also use the directive as an attribute:
+
+    <div topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
+
+See [`example.html`](./example.html) for an example.
+
+[AngularJS]: http://angularjs.org/
+[TimelineJS]: https://github.com/NUKnightLab/TimelineJS
+[hackday2013]: http://developers.nytimes.com/events/hack-day/
+

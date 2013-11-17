@@ -3,18 +3,12 @@
 <head>
 <title>Topic Timeline</title>
 </head>
-<body ng-app="app">
+<body ng-app="topicTimeline">
 
 <topic-timeline search-term="artist" api-key="ENTER_API_KEY_HERE"></topic-timeline>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script src="vendor/timeline/js/storyjs-embed.js"></script>
+<script src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
 <script src="topic-timeline.js"></script>
-
-<script>
-//<![CDATA[
-angular.module('app', ['topicTimeline']);
-//]]>
-</script>
 </body>
 </html>
