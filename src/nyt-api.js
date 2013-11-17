@@ -9,20 +9,20 @@ window.NYTAPI = (function () {
 			intervalLengths = [10, 20, 40, 100],
 			intervals = [],
 			i;
-		for (i = 0; i < intervalLengths.length; i++) { 
-			startYear = endYear - intervalLengths[i]; 
-			intervals.push([ String(startYear) + "0101", String(endYear) + "1231" ]); 
+		for (i = 0; i < intervalLengths.length; i++) {
+			startYear = endYear - intervalLengths[i];
+			intervals.push([ String(startYear) + "0101", String(endYear) + "1231" ]);
 			endYear = startYear;
 		}
 		return intervals;
 	}
-	
+
 	function serializeQuery(obj) {
 		var query = [];
 		for (key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				query.push([
-					encodeURIComponent(String(key)), 
+					encodeURIComponent(String(key)),
 					encodeURIComponent(String(obj[key]))
 				].join('='));
 			}
@@ -55,6 +55,6 @@ window.NYTAPI = (function () {
 	}
 
 	return {
-		getUrls: getUrls 
+		getUrls: getUrls
 	};
 }());

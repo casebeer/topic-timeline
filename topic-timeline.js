@@ -9,20 +9,20 @@ window.NYTAPI = (function () {
 			intervalLengths = [10, 20, 40, 100],
 			intervals = [],
 			i;
-		for (i = 0; i < intervalLengths.length; i++) { 
-			startYear = endYear - intervalLengths[i]; 
-			intervals.push([ String(startYear) + "0101", String(endYear) + "1231" ]); 
+		for (i = 0; i < intervalLengths.length; i++) {
+			startYear = endYear - intervalLengths[i];
+			intervals.push([ String(startYear) + "0101", String(endYear) + "1231" ]);
 			endYear = startYear;
 		}
 		return intervals;
 	}
-	
+
 	function serializeQuery(obj) {
 		var query = [];
 		for (key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				query.push([
-					encodeURIComponent(String(key)), 
+					encodeURIComponent(String(key)),
 					encodeURIComponent(String(obj[key]))
 				].join('='));
 			}
@@ -55,7 +55,7 @@ window.NYTAPI = (function () {
 	}
 
 	return {
-		getUrls: getUrls 
+		getUrls: getUrls
 	};
 }());
 angular.module('topicTimeline', []);
@@ -64,7 +64,7 @@ angular.module('topicTimeline').directive('topicTimeline',
 	function ($q, $http, $timeout) {
 	return {
 		restrict: 'AE',
-		template: '<div id="{{ embedId }}"></div>' 
+		template: '<div id="{{ embedId }}"></div>'
 			+ '<p><a href="http://developer.nytimes.com/">'
 			+ '<img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_150a.png" />'
 			+ '</a></p>',
@@ -74,14 +74,14 @@ angular.module('topicTimeline').directive('topicTimeline',
 		},
 		link: function ($scope, elt, attrs) {
 			$scope.embedId = 'id' + Math.floor(Math.random() * 10000000);
-			$scope.$watch('[searchTerm]', 
+			$scope.$watch('[searchTerm]',
 				function (newValue, oldValue) {
 					// todo: only run search when searchTerm is quiescent to avoid hammering API
 					// todo: rate limit searches; at least wait until previous promises resolved
 					getApiData($scope.searchTerm, $scope.apiKey)
 						.then(createTimelineData)
 						.then(drawTimeline);
-				}, 
+				},
 				true
 			);
 
@@ -146,7 +146,7 @@ angular.module('topicTimeline').directive('topicTimeline',
 					// todo: break out image retrieval into separate function
 					for (i = 0; i < article.multimedia.length; i++) {
 						image = article.multimedia[i];
-						if (image.type === 'image' 
+						if (image.type === 'image'
 							&& (image.subtype === 'wide' || image.subtype === 'xlarge')) {
 							event_.asset = {
 								media: 'http://www.nytimes.com/' + image.url

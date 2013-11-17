@@ -4,7 +4,7 @@ angular.module('topicTimeline').directive('topicTimeline',
 	function ($q, $http, $timeout) {
 	return {
 		restrict: 'AE',
-		template: '<div id="{{ embedId }}"></div>' 
+		template: '<div id="{{ embedId }}"></div>'
 			+ '<p><a href="http://developer.nytimes.com/">'
 			+ '<img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_150a.png" />'
 			+ '</a></p>',
@@ -14,14 +14,14 @@ angular.module('topicTimeline').directive('topicTimeline',
 		},
 		link: function ($scope, elt, attrs) {
 			$scope.embedId = 'id' + Math.floor(Math.random() * 10000000);
-			$scope.$watch('[searchTerm]', 
+			$scope.$watch('[searchTerm]',
 				function (newValue, oldValue) {
 					// todo: only run search when searchTerm is quiescent to avoid hammering API
 					// todo: rate limit searches; at least wait until previous promises resolved
 					getApiData($scope.searchTerm, $scope.apiKey)
 						.then(createTimelineData)
 						.then(drawTimeline);
-				}, 
+				},
 				true
 			);
 
@@ -86,7 +86,7 @@ angular.module('topicTimeline').directive('topicTimeline',
 					// todo: break out image retrieval into separate function
 					for (i = 0; i < article.multimedia.length; i++) {
 						image = article.multimedia[i];
-						if (image.type === 'image' 
+						if (image.type === 'image'
 							&& (image.subtype === 'wide' || image.subtype === 'xlarge')) {
 							event_.asset = {
 								media: 'http://www.nytimes.com/' + image.url
