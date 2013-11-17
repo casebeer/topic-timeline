@@ -1,5 +1,5 @@
-angular.module('nytTimeline', []);
-angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $timeout) {
+angular.module('topicTimeline', []);
+angular.module('topicTimeline').directive('topicTimeline', function ($q, $http, $timeout) {
 	return {
 		restrict: 'AE',
 		template: '<div id="{{ embedId }}"></div>',
@@ -26,7 +26,6 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 				var deferred = $q.defer(),
 					urls = NYTAPI.getUrls(searchTerm, apiKey, 'svc_search_v2_articlesearch'),
 					i,
-					promises = [],
 					results = [],
 					HTTP_ALL_CALLS_TIMEOUT_MS = 9000;
 
@@ -41,7 +40,6 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 
 				// todo: configure timeouts and error behavior
 				for (i = 0; i < urls.length; i++) {
-					//promises.push($http.jsonp(urls[i]));
 					$http.jsonp(urls[i]);
 				}
 
@@ -49,10 +47,6 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 				$timeout(function () {
 					deferred.resolve(results);
 				}, HTTP_ALL_CALLS_TIMEOUT_MS);
-
-//				$q.all(promises).then(function (results) {
-//					deferred.resolve(results);
-//				});
 
 				return deferred.promise;
 			}
@@ -106,9 +100,9 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 				console.log(timelineData);
 				createStoryJS({
 					type: 'timeline',
+					embed_id: $scope.embedId,
 					width: '100%',
 					height: '650',
-					embed_id: $scope.embedId,
 					source: timelineData,
 					css: 'vendor/timelinejs/css/timeline.css',
 					js: 'vendor/timelinejs/js/timeline-min.js'
