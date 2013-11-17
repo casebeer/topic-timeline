@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<style>
-</style>
+<head>
+<title>Topic Timeline</title>
 </head>
 <body ng-app="app">
 
-<topic-timeline search-term="crime" api-key="ENTER_API_KEY_HERE"></topic-timeline>
+<topic-timeline search-term="artist" api-key="ENTER_API_KEY_HERE"></topic-timeline>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="vendor/timeline/js/storyjs-embed.js"></script>
@@ -21,6 +16,5 @@
 angular.module('app', ['topicTimeline']);
 //]]>
 </script>
-
 </body>
 </html>
