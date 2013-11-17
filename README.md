@@ -2,6 +2,11 @@
 
 Topic Timeline requries AngularJS and TimelineJS.
 
+## Demo
+
+See a demo at 
+[http://chc.name/dev/topic-timeline](http://chc.name/dev/topic-timeline)
+
 ## Installation
 
 Build the `topic-timeline.js` file with `make`:
