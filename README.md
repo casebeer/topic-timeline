@@ -31,13 +31,17 @@ in that order:
 
 In the opening tag of your `<body>`, add the attribute `ng-app="topicTimeline"`:
 
-    <body ng-app="topicTimeline">
-	...
+```HTML
+<body ng-app="topicTimeline">
+    ...
+```
 
 Now add a `<topic-timeline>` element to your HTML wherever you'd like to embed the
 timeline, setting the `search-term` and `api-key` attributes:
 
-    <topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
+```HTML
+<topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
+```
 
 See [`example.html`](./example.html) for an example.
 
@@ -45,7 +49,9 @@ See [`example.html`](./example.html) for an example.
 
 If you prefer, you can also use the directive as an attribute:
 
-    <div topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
+```HTML
+<div topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
+```
 
 If you're already running and Angular app on the page, include the `topicTimeline`
 module as a dependency of your main app when you declare it in JavaScript. In this 
