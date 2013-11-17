@@ -2,7 +2,7 @@ angular.module('nytTimeline', []);
 angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $timeout) {
 	return {
 		restrict: 'AE',
-		template: '<div id="{{ embed_id }}"></div>',
+		template: '<div id="{{ embedId }}"></div>',
 		scope: {
 			searchTerm: '@',
 			apiKey: '@'
@@ -107,9 +107,11 @@ angular.module('nytTimeline').directive('nytTimeline', function ($q, $http, $tim
 				createStoryJS({
 					type: 'timeline',
 					width: '100%',
-					height: '40',
+					height: '200',
 					embed_id: $scope.embedId,
-					source: timelineData
+					source: timelineData,
+					css: 'vendor/timelinejs/css/timeline.css',
+					js: 'vendor/timelinejs/js/timeline-min.js'
 				});
 			}
 		}
