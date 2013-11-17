@@ -2,7 +2,8 @@ angular.module('topicTimeline', []);
 angular.module('topicTimeline').directive('topicTimeline', function ($q, $http, $timeout) {
 	return {
 		restrict: 'AE',
-		template: '<div id="{{ embedId }}"></div>',
+		template: '<div id="{{ embedId }}"></div>' 
+			+ '<p><a href="http://developer.nytimes.com/"><img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_150a.png" /></a></p>',
 		scope: {
 			searchTerm: '@',
 			apiKey: '@'
