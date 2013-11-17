@@ -30,8 +30,8 @@ In the opening tag of your `<body>`, add the attribute `ng-app="topicTimeline"`:
     <body ng-app="topicTimeline">
 	...
 
-Now add a `<topic-timeline>` element to your HTML, setting the `search-term` and
-`api-key` attributes:
+Now add a `<topic-timeline>` element to your HTML wherever you'd like to embed the
+timeline, setting the `search-term` and `api-key` attributes:
 
     <topic-timeline search-term="food" api-key="YOUR_NYT_API_KEY_HERE" />
 
