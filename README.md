@@ -64,7 +64,7 @@ var myApp = angular.module('myApp', ['topicTimeline']);
 
 [AngularJS]: http://angularjs.org/
 [TimelineJS]: https://github.com/NUKnightLab/TimelineJS
-[hackday2013]: http://developers.nytimes.com/events/hack-day/
+[hackday2013]: http://open.blogs.nytimes.com/2013/11/22/timesopen-hack-day-2013/
 [article-search-api]: http://developer.nytimes.com/docs/read/article_search_api_v2
 [request-api-key]: http://developer.nytimes.com/docs/reference/keys
 
